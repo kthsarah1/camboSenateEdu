@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>user</title>
+</head>
+<body>
+<h1>유저 리스트</h1>
+<table>
+    <thead>
+    <tr>
+        <th class="user_num">user_num</th>
+        <th class="user_email">user_email</th>
+        <th class="user_pw">user_pw</th>
+        <th class="user_fn">user_fn</th>
+        <th class="user_gn">user_gn</th>
+        <th class="user_sex">user_sex</th>
+        <th class="user_birth">user_birth</th>
+        <th class="user_nation">user_nation</th>
+        <th class="user_phone">user_phone</th>
+        <th class="user_position">user_position</th>
+        <th class="user_part">user_part</th>
+        <th class="user_offid">user_offid</th>
+        <th class="user_check">user_check</th>
+        <th class="Button">Button</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if(goods == null || goods.length == 0){ %>
+        <tr class="noData">
+            <td colspan="5">There is no data to show :(</td>
+        </tr>
+    <% } %>
+
+    <% goods.forEach(function(goods){ %>
+        <tr>
+            <td class = "user_num"> <%= goods.user_num %></td>
+            <td class = "user_email"> <%= goods.user_email %></td>
+            <td class = "user_pw"> <%= goods.user_pw %></td>
+            <td class = "user_fn"> <%= goods.user_fn %></td>
+            <td class = "user_gn"> <%= goods.user_gn %></td>
+            <td class = "user_sex"> <%= goods.user_sex %></td>
+            <td class = "user_birth"> <%= goods.user_birth %></td>
+            <td class = "user_nation"> <%= goods.user_nation %></td>
+            <td class = "user_phone"> <%= goods.user_phone %></td>
+            <td class = "user_position"> <%= goods.user_position %></td>
+            <td class = "user_part"> <%= goods.user_part %></td>
+            <td class = "user_offid"> <%= goods.user_offid %></td>
+            <td class = "user_check"> <%= goods.user_check %></td>
+            <td class = "Button "><a href="/user/<%= goods.user_num %>">click</a></td>
+
+        </tr>
+    <% }) %>
+
+    </tbody>
+</table>
+<a href="/user/add">add user</a>
+</body>
+</html>

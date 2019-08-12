@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>courses</title>
+</head>
+<body>
+<h1>상품 리스트</h1>
+<table>
+    <thead>
+    <tr>
+        <th class="no">no</th>
+        <th class="course">course</th>
+        <th class="duration">duration</th>
+        <th class="date">date</th>
+        <th class="hours">hours</th>
+        <th class="trainers">trainers</th>
+        <th class="courses_managers">courses_managers</th>
+        <th class="courses_facilitators">courses_facilitators</th>
+        <th class="Button">Button</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if(goods == null || goods.length == 0){ %>
+        <tr class="noData">
+            <td colspan="5">There is no data to show :(</td>
+        </tr>
+    <% } %>
+
+    <% goods.forEach(function(goods){ %>
+        <tr>
+            <td class = "no"> <%= goods.no %></td>
+            <td class = "courses"> <%= goods.courses %></td>
+            <td class = "duration"> <%= goods.duration %></td>
+            <td class = "date"> <%= goods.date %></td>
+            <td class = "hours"> <%= goods.hours %></td>
+            <td class = "trainers"> <%= goods.trainers %></td>
+            <td class = "courses_managers"> <%= goods.courses_managers %></td>
+            <td class = "courses_facilitators"> <%= goods.courses_facilitators %></td>
+            <td class = "Button "><a href="/course/<%= goods.no %>">click</a></td>
+
+        </tr>
+    <% }) %>
+
+    </tbody>
+</table>
+<a href="/course/add">add course</a>
+</body>
+</html>

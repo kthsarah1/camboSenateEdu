@@ -32,6 +32,12 @@ var authRouter = require('./routes/auth')(passport);
 app.use('/', userMainRouter);
 app.use('/auth', authRouter);
 
+var courseRouter = require('./routes/courses')(passport);
+app.use('/course',courseRouter);
+var adminmanageuser = require('./routes/admin_manageuser')(passport);
+app.use('/user',adminmanageuser);
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.render('subPage/404.ejs')
