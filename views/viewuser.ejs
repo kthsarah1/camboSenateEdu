@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>add</title>
+</head>
+<body>
+<h1>유저 > 조회</h1>
+<h2> user_num : <%= goods.user_num %></h2>
+<h2> user_email : <%= goods.user_email %> </h2>
+<h2> user_pw : <%= goods.user_pw %></h2>
+<h2> user_fn : <%= goods.user_fn %> </h2>
+<h2> user_gn : <%= goods.user_gn %></h2>
+<h2> user_sex : <%= goods.user_sex %> </h2>
+<h2> user_birth : <%= goods.user_birth %></h2>
+<h2> user_nation : <%= goods.user_nation %> </h2>
+<h2> user_phone : <%= goods.user_phone %></h2>
+<h2> user_position : <%= goods.user_position %> </h2>
+<h2> user_part : <%= goods.user_part %></h2>
+<h2> user_offid : <%= goods.user_offid %> </h2>
+<h2> user_check : <%= goods.user_check %></h2>
+<a href="/user/<%= goods.user_num %>/edit">edit user</a>
+<form action = "/user/<%= goods.user_num %>/delete" method = 'post'>
+<p>
+    <input type ="submit" value = "delete course">
+</p></form>
+</body>
+</html>
