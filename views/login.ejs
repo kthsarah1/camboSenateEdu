@@ -1,0 +1,182 @@
+<html>
+
+<head>
+  <title>Senate login</title>
+
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/bootstrap/js/moment.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.datetimepicker.js"></script>
+  <link href="/vendor/bootstrap/css/bootstrap.datetimepicker.css" rel="stylesheet">
+  <script src="/vendor/bootstrap/js/bootstrap-select-country.js"></script>
+  <link href="/vendor/bootstrap/css/bootstrap-select-country.css" rel="stylesheet">
+
+  <link href="/vendor/bootstrap/css/bootstrap-select.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap-select-boot.css" rel="stylesheet">
+  <script src="/vendor/bootstrap/js/bootstrap-select.min.js"></script>
+
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-select-boot.css">
+  <link href="/css/css-login.css" rel="stylesheet">
+
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    function signup() {
+      $("#signup").modal('show');
+    }
+    $(function () {
+      $('#datetimepicker3').datetimepicker({
+        format: 'DD/MM/YYYY'
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="login-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 login-sec">
+          <h2 class="text-center">ICT Depart</h2>
+          <form class="login-form" method="POST" action="/auth/login">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">ID</label>
+              <input type="text" name="user_email" class="form-control" placeholder="Input your ID">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="password" name="user_pw" class="form-control" placeholder="Input your Password">
+            </div>
+            <div class="form-check float-right">
+              <button type="submit" class="btn btn-login ">Sign in</button>
+              <button type="button" onclick="signup()" class="btn btn-signin ">Sign up</button>
+            </div>
+          </form>
+          <div class="copy-text">Copyright 2019. Senate of Cambodia</div>
+        </div>
+        <div class="col-md-8 banner-sec">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <div class="banner-text">
+                  <h2>Welcome to Senate of Cambodian</h2>
+                  <p>Welcome lcome lcome lcome lcome lcome lcomelcome</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="signup" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog tem-doc" role="document">
+        <div class="modal-content temp-model">
+          <div class="modal-header" style="padding-bottom: 0">
+            <h5 class="modal-title">Senate Sign-up</h5>
+            <br>
+            <p>Welcome to Senate edu manage system</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-body">
+              <form id="sub" method="post" action="/auth/signup">
+                <h6>Input your Email [Ex. edu@gmail.com]</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Email" class="form-control" type="text" name="user_email">
+                </div>
+
+                <h6>Input your Password</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Password" class="form-control" type="password" name="user_pw">
+                </div>
+
+                <h6>Input your password Again!</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Password Again" class="form-control" type="password">
+                </div>
+
+                <h6>Input your Family name</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Family name" class="form-control" type="text" name="user_fn">
+                </div>
+
+                <h6>Input your Given name</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Given name" class="form-control" type="text" name="user_gn">
+                </div>
+
+                <h6>Choice your Gender</h6>
+
+                <div class="row form-ro">
+                  <div class="custom-control custom-radio" style="margin-left: 15px">
+                    <input type="radio" class="custom-control-input" id="defaultChecked" value="male" name="user_sex" checked>
+                    <label class="custom-control-label" for="defaultChecked">Male</label>
+                  </div>
+                  <div class="custom-control custom-radio" style="margin-left: 15px">
+                    <input type="radio" class="custom-control-input" id="defaultUnchecked" value="female" name="user_sex">
+                    <label class="custom-control-label" for="defaultUnchecked">Female</label>
+                  </div>
+                </div>
+                <div style="padding:2px;"></div>
+                <h6>Select your Birth</h6>
+                <div class="form-group">
+                  <div class="row">
+                    <div class='col-sm-6'>
+                      <div class="form-group">
+                        <div class='input-group date' id='datetimepicker3'>
+                          <input type='text' class="form-control" name="user_birth" />
+                          <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h6>Select your Country</h6>
+                <div class="form-group">
+                  <div class="row form-ro">
+                    <select class="selectpicker countrypicker" data-default="Cambodia" data-live-search="true"
+                      data-default="United States" name="user_nation"></select>
+                  </div>
+                </div>
+
+                <h6>Input your Phone number [Ex. 012-345-678]</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Phone number" class="form-control" type="text" name="user_phone">
+                </div>
+
+                <h6>Input your Position [Ex. Director]</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Position" class="form-control" type="text" name="user_position">
+                </div>
+
+                <h6>Input your Department</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Department" class="form-control" type="text" name="user_part">
+                </div>
+
+                <h6>Input your Office ID</h6>
+                <div class="form-group">
+                  <input placeholder="Enter Your Office ID" class="form-control" type="text" name="user_offid">
+                </div>
+
+                <div id="pwsame"></div>
+                <div class="row form-ro">
+                  <button class="btn btn-success">Sign Up</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
