@@ -25,11 +25,13 @@ app.use(session({
   saveUninitialized: true,
  // store: new FilewStore()
 }));
-var passport = require('./public/passport')(app);
 
-var userMainRouter = require('./routes/userMain');
+var passport = require('./public/passport')(app);
 var authRouter = require('./routes/auth')(passport);
+var userMainRouter = require('./routes/userMain');
+var adminMainRouter = require('./routes/adminMain');
 app.use('/', userMainRouter);
+app.use('/admin', adminMainRouter);
 app.use('/auth', authRouter);
 
 var courseRouter = require('./routes/courses')(passport);

@@ -6,11 +6,11 @@ module.exports = function (app) {
     app.use(passport.initialize());
     app.use(passport.session());
     passport.serializeUser(function (user, done) {
-        console.log("serialize", user);
+        console.log("serialize================");
         done(null, user);
     });
 	passport.deserializeUser(function(user, done){
-		console.log("deserialize", user);
+		console.log("deserialize================");
 		done(null, user);
 	});
     passport.use(new LocalStrategy({
@@ -25,7 +25,6 @@ module.exports = function (app) {
         conn.getConnection(function (err, client) {
             if (err) { console.log('connection Error', err); }
             client.query(query, params, function (err, result) {
-                console.log("로그지울것! : ", id, password);
                 if (err) {//Mysql Error
                     console.log("Mysql Error" + err);
                     return done(err);
